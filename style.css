@@ -1,42 +1,39 @@
-/* Styling for everything */
+/* Styling variables */
 :root {
-  --gradient: linear-gradient(
-    180deg,
-    rgba(45, 112, 1253, 0.73) 0%,
-    #163e92 100%
-  );
-  --dark: #001747;
-  --grey: #b1bacb;
-  --grey-border: rgba(210, 210, 210, 0.75);
-  --grey-light: #eeeeee;
-  --grey-dark: #405175;
-  --blue: #2d70fd;
-  --green: #00d8a7;
-  --white: #ffffff;
+  --charcoal-gray: #333333;
+  --dark-gray: #3333338e;
+  --forrest-green: #4a6741d5;
+  --gradient: linear-gradient(180deg, rgba(74, 103, 65, 0.73) 0%, #22311d 100%);
+  --green-checkmark: #1fc129;
+  --light-gray: #3333331f;
+  --off-white: #f9f1f1;
 }
 
+/* Application content styling */
 body {
+  align-items: center;
   background: var(--gradient);
-  margin: 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   justify-content: space-evenly;
-  align-items: center;
+  margin: 0;
 }
 
-.btn {
-  color: var(--white);
+/* Add task button styling */
+.addButton {
+  background-color: var(--forrest-green);
+  border: none;
+  border-radius: 0.3rem;
+  bottom: 0.8rem;
+  color: var(--off-white);
   font-size: 1.1rem;
   padding: 0.7rem 1.5rem;
-  border-radius: 0.3rem;
-  background-color: var(--blue);
-  border: none;
   position: absolute;
   right: 0.5rem;
-  bottom: 0.5rem;
 }
 
+/* Header and paragraph tag styling */
 h1,
 h2,
 h3,
@@ -47,56 +44,63 @@ p {
   margin: 0;
 }
 
-/* Todo Container */
+/* Interactable application content styling */
 .todo {
+  background: var(--off-white);
+  border-radius: 2rem;
+  box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  border-radius: 2rem;
-  background: var(--white);
-  padding: 3rem;
   height: 50%;
-  width: 60%;
-  box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);
+  justify-content: space-around;
   max-width: 30rem;
+  padding: 3rem;
+  width: 60%;
 }
 
+/* Interactable application title styling */
 h2 {
-  text-transform: uppercase;
+  color: var(--charcoal-gray);
   height: 3rem;
-  color: var(--dark);
   text-align: center;
+  text-transform: uppercase;
 }
 
+/* Textbox and add task button container styling */
 .input {
-  position: relative;
   display: flex;
+  padding-bottom: 0.3rem;
+  position: relative;
 }
 
+/* Textbox styling */
 .input-field {
-  width: 100%;
   border: 0.06rem solid #d2d2d2bf;
   border-radius: 0.5rem;
-  padding: 1.25rem;
   font-size: 1rem;
+  padding: 1.25rem;
+  width: 100%;
 }
 
-/* Input of type "text" */
+/* Input of type "text" placeholder styling */
 input[type="text"]::placeholder {
-  color: var(--grey);
+  color: var(--dark-gray);
 }
 
+/* To-do container styling */
 .todo-container {
   display: flex;
   gap: 1rem;
 }
 
+/* Task list styling */
 ul {
-  padding: 0;
   margin: 0;
   overflow-y: scroll;
+  padding: 0;
 }
 
+/* Task list item styling */
 li {
   display: flex;
   flex-direction: column;
@@ -104,109 +108,118 @@ li {
   padding: 1.3rem;
 }
 
-/* Paragraph tags within ID's labeled "todoList" */
+/* Paragraph tags with ID's labeled "todoList" styling */
 #todoList p {
+  align-items: center;
+  color: var(--charcoal-gray);
   display: flex;
   gap: 1rem;
-  color: var(--dark);
-  align-items: center;
 }
 
+/* "disabled" class elements with ID's labeled "todoList" styling */
 #todoList .disabled {
   color: #8f98a8;
 }
 
+/* "disabled" class styling */
 .disabled {
   display: flex;
   text-decoration: line-through;
 }
 
+/* Input of type "checkbox" styling */
 input[type="checkbox"] {
   appearance: none;
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
-  cursor: pointer;
 }
 
-/* Input of type "checkbox" (unchecked) */
+/* Input of type "checkbox" (unchecked) styling */
 input[type="checkbox"]::before {
-  content: "\2713"; /* Unicode for checkmark */
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  font-size: 1.7rem;
-  text-align: center;
-  border: 0.06rem solid var(--grey-border);
+  border: 0.06rem solid var(--dark-gray);
   border-radius: 50%;
   color: transparent;
-}
-
-/* Input of type "checkbox" (checked) */
-input[type="checkbox"]:checked::before {
-  color: var(--white);
-  background-color: var(--green);
-  border: 0.06rem solid var(--green);
-  border-radius: 50%;
-}
-
-.counter {
-  border: 0.06rem solid var(--grey-light);
-}
-
-.counter-container {
+  content: "\2713"; /* Unicode for checkmark */
+  display: inline-block;
+  font-size: 1.7rem;
   height: 2rem;
-  display: flex;
-  justify-content: space-between;
-  color: var(--grey);
+  text-align: center;
+  width: 2rem;
 }
 
+/* Input of type "checkbox" (checked) styling */
+input[type="checkbox"]:checked::before {
+  background-color: var(--green-checkmark);
+  border: 0.06rem solid var(--green-checkmark);
+  border-radius: 50%;
+  color: var(--off-white);
+}
+
+/* Task counter and delete all button divider styling */
+.counter {
+  border: 0.06rem solid var(--light-gray);
+}
+
+/* Task counter and deleta all button container styling */
+.counter-container {
+  color: var(--dark-gray);
+  display: flex;
+  height: 2rem;
+  justify-content: space-between;
+}
+
+/* Paragraph tags within task counter container styling */
 .counter-container p {
   align-self: center;
 }
 
+/* Button within task counter container styling */
 .counter-container button {
-  border: none;
   background-color: transparent;
-  color: var(--grey);
+  border: none;
+  color: var(--dark-gray);
   font-size: 1rem;
 }
 
+/* Footer container styling */
 .footer {
+  background-color: var(--off-white);
+  border-radius: 0.5rem;
   display: flex;
   gap: 1.8rem;
-  background-color: var(--white);
   padding: 1.2rem;
-  border-radius: 0.5rem;
 }
 
+/* Made by and author styling */
 .made-by,
 .author {
   font-size: 0.9rem;
 }
 
+/* Made by styling */
 .made-by {
-  color: var(--grey-dark);
+  color: var(--charcoal-gray);
 }
 
+/* Author styling */
 .author {
-  color: var(--blue);
+  color: var(--forrest-green);
   font-weight: bold;
 }
 
+/* Scroll bar styling */
 .scroll {
-  height: 15rem;
-  scrollbar-width: thin;
+  scrollbar-color: auto !important;
 }
-
-.scroll::-webkit-scrollbar {
+::-webkit-scrollbar {
+  height: 0.6rem;
   width: 0.6rem;
 }
-
-.scroll::-webkit-scrollbar-thumb {
-  background-color: var(--blue);
+::-webkit-scrollbar-thumb {
+  background-color: var(--forrest-green);
   border-radius: 0.5rem;
 }
-
-.scroll::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   display: none;
 }
