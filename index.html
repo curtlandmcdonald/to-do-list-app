@@ -1,0 +1,52 @@
+<!-- Tells the browser that this is HTML code when it reads this document -->
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <!-- HTML tag to use additional characters outside ASCII character set -->
+    <meta charset="UTF-8" />
+
+    <!-- Represent width and hieght correctly across devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link CSS to HTML -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Link JavaScript to HTML -->
+    <script src="./script.js" defer></script>
+
+    <!-- Application title -->
+    <title>To-Do List Application</title>
+  </head>
+
+  <body>
+    <section class="todo">
+      <h2>To-Do List</h2>
+      <div class="input">
+        <input
+          type="text"
+          class="input-field"
+          id="todoInput"
+          placeholder="Add a new item"
+        />
+        <button class="btn">Add</button>
+      </div>
+      <ul class="scroll">
+        <li id="todoList"></li>
+      </ul>
+      <div>
+        <hr class="counter" />
+        <div class="counter-container">
+          <p><span id="todoCount">0</span> items total</p>
+          <button id="deleteButton">Delete All</button>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer">
+        <p class="made-by">Made By</p>
+        <p class="author">Curtland McDonald</p>
+      </div>
+    </footer>
+  </body>
+</html>
