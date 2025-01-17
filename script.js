@@ -6,7 +6,7 @@ const todoInput = document.getElementById("todoInput");
 const todoList = document.getElementById("todoList");
 const todoCount = document.getElementById("todoCount");
 const addButton = document.querySelector(".addButton");
-const deleteButton = document.getElementById("deleteButton");
+const deleteAllButton = document.getElementById("deleteAllButton");
 
 // Initialize event listener.
 document.addEventListener("DOMContentLoaded", function () {
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Delete all tasks on the to-do list when Delete All button is clicked.
-  deleteButton.addEventListener("click", deleteAllTasks);
+  deleteAllButton.addEventListener("click", deleteAllTasks);
   displayTasks(); // Display all tasks.
 });
 
@@ -62,9 +62,11 @@ function displayTasks() {
     const p = document.createElement("p");
 
     // Set the inner HTML of the paragraph tag:
-    // - <div> contains <input> and <p> tags.
-    // - <input> contains a checkbox that can be clicked to disable/enable tasks.
-    // - <p> contains text that can be edited by clicking it.
+    // - <div> contains <input>(checkbox), <p>, and <div> tags.
+    //    - <input> (checkbox) contains a checkbox that can be clicked to disable/enable tasks.
+    //    - <p> contains text that can be edited by clicking it.
+    //    - <div> contains <input>(button).
+    //       - <input> (button) contains a button that can be clicked to delete the current task.
     p.innerHTML = `
         <div class="todo-container">
             <input 
@@ -79,7 +81,18 @@ function displayTasks() {
               onclick="editTask(${index})"
             >
               ${item.text}
+              
             </p>
+            <div class="todo-button-container">
+              <input
+                type="button"
+                value="✖"
+                id="button-${index}"
+                class="deleteTaskButton"
+                onclick="deleteTask(${index})"
+              >
+            </div>
+            
         </div>
     `;
 
@@ -94,6 +107,13 @@ function displayTasks() {
 
   // Set to-do list item count to to-do list length.
   todoCount.textContent = todo.length;
+}
+
+// Function to delete a specific task.
+function deleteTask(index) {
+  todo.splice(index, 1); // Remove one array element at the specified index.
+  saveToLocalStorage(); // Save tasks to local storage.
+  displayTasks(); // Display tasks.
 }
 
 // Function to edit the text within a task.
@@ -118,6 +138,28 @@ function editTask(index) {
 
     // Display tasks.
     displayTasks();
+  });
+
+  // Listen for keydown events:
+  inputElement.addEventListener("keydown", function (event) {
+    const updatedText = inputElement.value.trim(); // Set updated text to new input with whitespace trimmed.
+
+    // If enter key is pressed:
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent page redirects and refreshes.
+
+      // if updated text exists:
+      if (updatedText) {
+        todo[index].text = updatedText; // Set task text to updated text.
+        saveToLocalStorage(); // Save task to local storage.
+      }
+
+      // Display tasks.
+      displayTasks();
+
+      // Unfocus to-do list item being edited.
+      inputElement.blur();
+    }
   });
 }
 

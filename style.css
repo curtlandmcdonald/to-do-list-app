@@ -1,12 +1,16 @@
 /* Styling variables */
 :root {
+  --blue: #0047ab;
   --charcoal-gray: #333333;
   --dark-gray: #3333338e;
   --forrest-green: #4a6741d5;
   --gradient: linear-gradient(180deg, rgba(74, 103, 65, 0.73) 0%, #22311d 100%);
   --green-checkmark: #1fc129;
+  --light-blue: #89cff0;
   --light-gray: #3333331f;
   --off-white: #f9f1f1;
+  --pink: #faa0a07c;
+  --red: #aa4a44;
 }
 
 /* Application content styling */
@@ -22,15 +26,60 @@ body {
 
 /* Add task button styling */
 .addButton {
-  background-color: var(--forrest-green);
-  border: none;
-  border-radius: 0.3rem;
+  background-color: var(--light-gray);
+  border: 0.1rem solid var(--forrest-green);
+  border-radius: 0.5rem;
   bottom: 0.8rem;
-  color: var(--off-white);
-  font-size: 1.1rem;
+  color: var(--forrest-green);
+  cursor: pointer;
+  font-size: 1rem;
   padding: 0.7rem 1.5rem;
   position: absolute;
   right: 0.5rem;
+}
+
+/* Add task button hover styling */
+.addButton:hover {
+  background-color: var(--forrest-green);
+  border: 0.1rem solid var(--charcoal-gray);
+  border-radius: 0.5rem;
+  bottom: 0.8rem;
+  color: var(--off-white);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+  position: absolute;
+  right: 0.5rem;
+}
+
+/* Delete task button styling */
+.deleteTaskButton {
+  background-color: var(--pink);
+  border: 0.1rem solid var(--red);
+  border-radius: 0.5rem;
+  bottom: 0.8rem;
+  color: var(--red);
+  cursor: pointer;
+  font-size: 0.6rem;
+  padding: 0.6rem 0.7rem;
+  max-width: min-content;
+  max-height: min-content;
+  align-items: center;
+}
+
+/* Delete task button hover styling */
+.deleteTaskButton:hover {
+  background-color: var(--red);
+  border: 0.1rem solid var(--charcoal-gray);
+  border-radius: 0.5rem;
+  bottom: 0.8rem;
+  color: var(--off-white);
+  cursor: pointer;
+  font-size: 0.6rem;
+  padding: 0.6rem 0.7rem;
+  max-width: min-content;
+  max-height: min-content;
+  align-items: center;
 }
 
 /* Header and paragraph tag styling */
@@ -79,6 +128,7 @@ h2 {
   border-radius: 0.5rem;
   font-size: 1rem;
   padding: 1.25rem;
+  padding-right: 5.6rem;
   width: 100%;
 }
 
@@ -91,6 +141,39 @@ input[type="text"]::placeholder {
 .todo-container {
   display: flex;
   gap: 1rem;
+  width: 100%;
+}
+
+/* To-do container paragraph tag styling */
+.todo-container p {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+/* To-do container input tag focused styling */
+.todo-container input:focus {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+/* to-do container button styling */
+.todo-button-container {
+  display: flex;
+  padding-top: 0.21rem;
+  position: grid;
+}
+
+/* to-do container button focused styling */
+.todo-button-container:focus {
+  display: flex;
+  padding-top: 0.21rem;
+  position: grid;
 }
 
 /* Task list styling */
@@ -113,6 +196,7 @@ li {
   align-items: center;
   color: var(--charcoal-gray);
   display: flex;
+  width: 100%;
   gap: 1rem;
 }
 
