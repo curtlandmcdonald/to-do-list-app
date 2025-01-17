@@ -179,15 +179,17 @@ input[type="checkbox"]:checked::before {
   background-color: transparent;
   border: none;
   color: var(--dark-gray);
+  cursor: pointer;
   font-size: 1rem;
 }
 
 /* Footer container styling */
 .footer {
+  align-items: center;
   background-color: var(--off-white);
   border-radius: 0.5rem;
   display: flex;
-  gap: 1.8rem;
+  gap: 0.7rem;
   padding: 1.2rem;
 }
 
