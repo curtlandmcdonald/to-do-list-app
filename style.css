@@ -111,6 +111,7 @@ p {
 h2 {
   color: var(--charcoal-gray);
   height: 3rem;
+  padding-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -149,8 +150,8 @@ input[type="text"]::placeholder {
   display: flex;
   gap: 1rem;
   width: 100%;
-  word-break: normal;
-  word-wrap: normal;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 /* To-do container input tag focused styling */
@@ -158,8 +159,8 @@ input[type="text"]::placeholder {
   display: flex;
   gap: 1rem;
   width: 100%;
-  word-break: normal;
-  word-wrap: normal;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 /* to-do container button styling */
