@@ -97,7 +97,7 @@ p {
 .todo {
   background: var(--off-white);
   border-radius: 2rem;
-  box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);
+  box-shadow: 0 1rem 3rem 1rem rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   height: 50%;
@@ -110,10 +110,12 @@ p {
 /* Interactable application title styling */
 h2 {
   color: var(--charcoal-gray);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 200%;
+  font-weight: lighter;
   height: 3rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   text-align: center;
-  text-transform: uppercase;
 }
 
 /* Textbox and add task button container styling */
@@ -273,6 +275,7 @@ input[type="checkbox"]:checked::before {
   align-items: center;
   background-color: var(--off-white);
   border-radius: 0.5rem;
+  box-shadow: 0 0.7rem 3rem 0.7rem rgba(0, 0, 0, 0.3);
   display: flex;
   gap: 0.7rem;
   padding: 1.2rem;
