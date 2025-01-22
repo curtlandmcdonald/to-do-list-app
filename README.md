@@ -2,7 +2,7 @@
 <h1>To-Do List Web Application</h1>
 <p>A simple, modern to-do list web application with a beautiful forest-themed gradient interface.
 This application helps users manage their tasks with a clean, intuitive design and smooth interactions.</p>
-<img align="left" alt="To-Do List Application Screenshot" width="500px" src="" />
+<img align="left" alt="To-Do List Application Screenshot" width="500px" src="screenshot1.png" />
 <br />
 
 <!-- Features -->
