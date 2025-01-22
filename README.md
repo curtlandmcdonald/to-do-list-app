@@ -1,9 +1,11 @@
 <!-- Title and Description -->
 <h1>To-Do List Web Application</h1>
 <p>A simple, modern to-do list web application with a beautiful forest-themed gradient interface.
-This application helps users manage their tasks with a clean, intuitive design and smooth interactions.</p>
-<img align="left" alt="To-Do List Application Screenshot" width="500px" src="screenshot1.png" />
-<br />
+   This application helps users manage their tasks with a clean, intuitive design and smooth interactions.</p>
+<kbd>
+  <img alt="To-Do List Application Screenshot" src="screenshot1.png" width="100%"/>
+</kbd>
+&nbsp;
 
 <!-- Features -->
 <h2>Features</h2>
@@ -14,8 +16,8 @@ This application helps users manage their tasks with a clean, intuitive design a
       <li>Add tasks using the input field and clicking the <b>Add</b> button or <b>[ENTER]</b> key</li>
       <li>Mark tasks as complete/incomplete with a stylish checkbox</li>
       <li>Edit existing tasks by clicking on them</li>
-      <li>Delete individual tasks</li>
       <li>Delete all tasks at once</li>
+      <li>Delete individual tasks</li>
     </ul>
   </li>
   <li>
@@ -137,11 +139,3 @@ todo-list-app/
     <a href="https://support.google.com/sites/answer/7529116?hl=en">Accessiblity Guidelines</a>
   </li>
 </ul>
-
-
-
-
-
-
-
-
