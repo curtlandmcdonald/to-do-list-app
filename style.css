@@ -142,14 +142,18 @@ input[type="text"]::placeholder {
 
 /* To-do container styling */
 .todo-container {
+  align-items: center;
   display: flex;
   gap: 1rem;
+  position: relative;
   width: 100%;
 }
 
 /* To-do container paragraph tag styling */
 .todo-container p {
+  flex: 1;
   gap: 1rem;
+  margin-right: 1rem;
   width: 100%;
   word-break: break-word;
   word-wrap: break-word;
@@ -164,13 +168,13 @@ input[type="text"]::placeholder {
 }
 
 /* To-do container input tag styling */
-.todo-container input {
+.todo-checkbox {
   display: flex;
   gap: 0.5rem;
 }
 
 /* To-do container input tag focused styling */
-.todo-container input:focus {
+.todo-checkbox:focus {
   display: flex;
   gap: 0.5rem;
 }
@@ -178,8 +182,10 @@ input[type="text"]::placeholder {
 /* to-do container button styling */
 .todo-button-container {
   display: flex;
+  flex-shrink: 0;
+  margin-left: auto;
   padding-top: 0.21rem;
-  position: grid;
+  position: relative;
 }
 
 /* to-do container button focused styling */
