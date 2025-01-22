@@ -226,8 +226,22 @@ input[type="checkbox"] {
 input[type="checkbox"]::before {
   border: 0.06rem solid var(--dark-gray);
   border-radius: 50%;
-  color: transparent;
-  content: "\2713"; /* Unicode for checkmark */
+  color: black;
+  content: "";
+  display: inline-block;
+  font-size: 1.7rem;
+  height: 2rem;
+  text-align: center;
+  width: 2rem;
+}
+
+/* Input of type "checkbox" (unchecked) hover styling */
+input[type="checkbox"]:hover::before {
+  background-color: var(--light-gray);
+  border: 0.06rem solid var(--blue);
+  border-radius: 50%;
+  color: black;
+  content: "";
   display: inline-block;
   font-size: 1.7rem;
   height: 2rem;
@@ -237,8 +251,8 @@ input[type="checkbox"]::before {
 
 /* Input of type "checkbox" (checked) styling */
 input[type="checkbox"]:checked::before {
-  background-color: var(--green-checkmark);
-  border: 0.06rem solid var(--green-checkmark);
+  background-color: var(--light-blue);
+  border: 0.06rem solid var(--blue);
   border-radius: 50%;
   color: var(--off-white);
 }
