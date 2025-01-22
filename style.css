@@ -149,20 +149,30 @@ input[type="text"]::placeholder {
 
 /* To-do container paragraph tag styling */
 .todo-container p {
-  display: flex;
   gap: 1rem;
   width: 100%;
-  word-break: break-all;
+  word-break: break-word;
   word-wrap: break-word;
+}
+
+/* To-do container paragraph tag styling */
+.todo-container p:focus {
+  gap: 1rem;
+  width: 100%;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+/* To-do container input tag styling */
+.todo-container input {
+  display: flex;
+  gap: 0.5rem;
 }
 
 /* To-do container input tag focused styling */
 .todo-container input:focus {
   display: flex;
-  gap: 1rem;
-  width: 100%;
-  word-break: break-all;
-  word-wrap: break-word;
+  gap: 0.5rem;
 }
 
 /* to-do container button styling */
@@ -196,6 +206,15 @@ li {
 
 /* Paragraph tags with ID's labeled "todoList" styling */
 #todoList p {
+  align-items: center;
+  color: var(--charcoal-gray);
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+/* Paragraph tags with ID's labeled "todoList" styling */
+#todoList p:focus {
   align-items: center;
   color: var(--charcoal-gray);
   display: flex;
